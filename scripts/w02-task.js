@@ -4,7 +4,8 @@
 
 /* Step 2 - Variables */
 let fullname = 'Chioma Nwosu';
-const Year = new Date();
+const year = new Date();
+let currentYear = year.getFullYear();
 let profilepicture = 'images/personal picture.jpg';
 
 /* Step 3 - Element Variables */
@@ -16,13 +17,18 @@ const imageElement = document.querySelector('img');
 /* Step 4 - Adding Content */
 imageElement.setAttribute('src',`${profilepicture}`);
 nameElement.innerHTML =(`<strong>${fullname}</strong>`);
+yearElement.textContent = currentYear;
 imageElement.setAttribute('alt', `profile image of ${fullname}`);
 
 
 /* Step 5 - Array */
-let foods = ['spaghetti', 'noodles', 'plantain', 'cereals'];
-foodElement.innerHTML +=`<br>${foods}`;
-foods.shift()
-foodElement.innerHTML +=`<br>${foods}`;
-foods.pop()
-foodElement.innerHTML +=`<br>${foods}`;
+const favoritefoods = ['spaghetti', 'noodles', 'plantain', 'cereals'];
+foodElement.innerHTML += `<br>${favoritefoods}`;
+const anotherfood = " Pizza";
+favoritefoods.push(anotherfood);
+foodElement.innerHTML += `<br>${favoritefoods}`;
+favoritefoods.shift();
+foodElement.innerHTML += `<br>${favoritefoods}`;
+favoritefoods.pop();
+foodElement.innerHTML += `<br>${favoritefoods}`;
+
